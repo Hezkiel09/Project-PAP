@@ -124,10 +124,30 @@ header {
 }
 
 footer.footer {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
   font-size: 14px;
-  padding-bottom: 20px;
+  background-color: #edf3f0; /* warna abu kehijauan */
+  border-top: 1px solid #ccc;
 }
+
+.footer-left {
+  color: #333;
+}
+
+.footer-right a {
+  margin-left: 16px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.footer-right a:hover {
+  text-decoration: underline;
+}
+
 
 .footer-text {
   margin-bottom: 8px;
