@@ -1,0 +1,72 @@
+/* Font dan Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #e9fbe6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container Utama */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Kotak Formulir */
+.form-box {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Judul */
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Label dan Input */
+.form-box label {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.form-box input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+/* Catatan Validasi */
+.note {
+  font-size: 12px;
+  margin-top: 15px;
+  color: #444;
+}
+
+/* Tombol */
+.form-box button {
+  background: #4CAF50;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-box button:hover {
+  background: #45a049;
+}
