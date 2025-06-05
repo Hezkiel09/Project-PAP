@@ -1,0 +1,203 @@
+body {
+  background-color: #F0FAF0; /* Warna latar belakang */
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Step Indicator Styles (disesuaikan) */
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.step .circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #fff; /* Warna teks putih */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border: 1px solid #8BC34A;
+  color: #8BC34A;
+}
+
+.step.active .circle {
+  background-color: #8BC34A; /* Warna hijau */
+  color: #fff;
+}
+
+.step p {
+  font-size: 14px;
+  color: #444;
+  white-space: nowrap;
+}
+
+.line {
+  height: 1px;
+  background-color: #8BC34A;
+  flex: 1;
+  margin: 10px;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Lokasi Style */
+.input-group-text {
+    background-color: white;
+    border-right: none;
+}
+
+.form-control{
+    border-left: none;
+}
+
+/* Calendar Styles */
+.calendar {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #CED4DA;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-nav {
+  background-color: #F0FAF0;
+  color: black;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.calendar-nav:hover {
+  background-color: #E2F7E2;
+}
+
+#calendar {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#calendar th,
+#calendar td {
+  text-align: center;
+  padding: 8px;
+}
+
+#calendar th {
+  font-weight: bold;
+  color: #555;
+}
+
+#calendar td {
+  border: none;
+}
+
+/* Time Slots Styles (disesuaikan) */
+.time-slots {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.time-slots p {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.time-slot {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.time-slot input[type="radio"] {
+  display: none; /* Sembunyikan radio button default */
+}
+
+.time-slot span {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.time-slot input[type="radio"]:checked + span {
+  background-color: #8BC34A;
+  color: white;
+  border-color: #8BC34A;
+}
+
+/* Continue Button Styles */
+.continue-button {
+  background-color: #8BC34A;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.continue-button:hover {
+  background-color: #689F38;
+}
+
+.today {
+    background-color: #8BC34A !important;
+    color: white !important;
+    border-radius: 50%;
+}
