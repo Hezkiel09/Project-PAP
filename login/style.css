@@ -6,15 +6,13 @@
 }
 
 body {
-  background-color: #eefbea;
-  height: 100vh;
+  background-color: #e8f7e5;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .container {
-  margin-top: 150px;
+  margin-top: 150px; /* Sudah benar */
   display: flex;
 }
 
@@ -56,9 +54,10 @@ button {
   border: none;
   padding: 12px;
   font-size: 16px;
+  font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 30px;
   transition: background-color 0.3s;
 }
 
@@ -69,7 +68,7 @@ button:hover {
 .register {
   text-align: center;
   font-size: 13px;
-  margin-top: 15px;
+  margin-top: 30px;
 }
 
 .register a {
