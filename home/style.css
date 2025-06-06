@@ -1,7 +1,7 @@
 /* General */
 body {
   background-color: #e8f7e5;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* Navbar */
@@ -35,15 +35,15 @@ body {
   margin-top: 2rem;
 }
 
-
 /* Tentang Kami Section */
 #tentang {
   padding: 5rem 0;
+  background-color: #ffffff;
 }
 
 /* Background shape left (semi-circle effect) */
 section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100px;
@@ -79,3 +79,24 @@ section .row {
   padding: 0 16px;
 }
 
+#kontak {
+  background-color: #ffffff;
+}
+
+#kontak h2 {
+  font-size: 2rem;
+}
+
+#kontak p {
+  font-size: 0.95rem;
+  color: #222;
+}
+
+#kontak .text-success {
+  color: #3e8e41 !important; /* warna hijau tua */
+}
+
+#kontak .border-md-start,
+#kontak .border-md-end {
+  border-color: #3e8e41 !important;
+}
