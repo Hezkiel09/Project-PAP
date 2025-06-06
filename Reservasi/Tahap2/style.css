@@ -1,103 +1,117 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: #F0FAF0; /* Warna latar belakang */
+  background-color: #e8f7e5;
   display: flex;
   justify-content: center;
   padding: 40px 20px;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 500px;
+  max-width: 900px;
   width: 100%;
+  text-align: center;
 }
 
 .title {
   font-size: 32px;
   margin-bottom: 30px;
   font-weight: bold;
-  color: #333;
+  color: #222;
 }
 
-/* Step Indicator Styles (disesuaikan) */
 .step-indicator {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 30px;
-  width: 100%;
 }
 
 .step {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex: 1;
 }
 
-.step .circle {
+.circle {
   width: 30px;
   height: 30px;
+  border: 1px solid #41773E;
   border-radius: 50%;
-  background-color: #fff;
-  color: #fff; /* Warna teks putih */
+  background-color: white;
+  color: #41773E;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  border: 1px solid #8BC34A;
-  color: #8BC34A;
 }
 
 .step.active .circle {
-  background-color: #8BC34A; /* Warna hijau */
-  color: #fff;
+  background-color: #41773E;
+  color: white;
 }
 
 .step p {
   font-size: 14px;
-  color: #444;
-  white-space: nowrap;
 }
 
 .line {
+  width: 40px;
   height: 1px;
-  background-color: #8BC34A;
+  background-color: #41773E;
+  margin: 0 10px;
+}
+
+.input-group {
+  margin-bottom: 30px;
+}
+
+.input-group label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
   flex: 1;
-  margin: 10px;
+  padding: 5px 10px;
 }
 
-/* Form Styles */
-.form-group {
-  margin-bottom: 20px;
-  width: 100%;
+.icon {
+  margin-right: 8px;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #555;
+.dropdown-arrow {
+  margin-left: 8px;
 }
 
-/* Lokasi Style */
-.input-group-text {
-    background-color: white;
-    border-right: none;
+.grid-layout {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-.form-control{
-    border-left: none;
-}
-
-/* Calendar Styles */
 .calendar {
-    width: 100%;
-    margin-bottom: 20px;
-    border: 1px solid #CED4DA;
-    border-radius: 5px;
-    padding: 10px;
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
 }
 
 .calendar-header {
@@ -105,99 +119,103 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
-.calendar-nav {
-  background-color: #F0FAF0;
-  color: black;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.calendar-nav:hover {
-  background-color: #E2F7E2;
-}
-
-#calendar {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-#calendar th,
-#calendar td {
+.calendar-days, .calendar-dates {
+  display: grid;
+  grid-template-columns: repeat(7, 35px);
+  gap: 8px;
   text-align: center;
-  padding: 8px;
-}
-
-#calendar th {
-  font-weight: bold;
-  color: #555;
-}
-
-#calendar td {
-  border: none;
-}
-
-/* Time Slots Styles (disesuaikan) */
-.time-slots {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.time-slots p {
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #555;
-}
-
-.time-slot {
-  display: inline-block;
-  margin-right: 10px;
+  font-size: 14px;
   margin-bottom: 5px;
 }
 
-.time-slot input[type="radio"] {
-  display: none; /* Sembunyikan radio button default */
+.calendar-dates div {
+  padding: 5px 0;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.time-slot span {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
+.calendar-dates div:hover {
+  background-color: #c9e7c8;
+}
+
+.calendar-dates .selected {
+  border: 2px solid #41773E;
+  border-radius: 50%;
   background-color: white;
-  color: #333;
+  color: #41773E;
+}
+
+.options {
+  max-width: 350px;
+  text-align: left;
+}
+
+.label {
+  font-weight: bold;
+  margin: 10px 0 5px;
+  color: #2a2a2a;
+}
+
+.time-options input[type="radio"] {
+  display: none;
+}
+
+.time-options label {
+  display: inline-block;
+  border: 2px solid #41773E;
+  border-radius: 20px;
+  padding: 6px 14px;
+  background-color: white;
+  color: #41773E;
   cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  transition: all;
 }
 
-.time-slot input[type="radio"]:checked + span {
-  background-color: #8BC34A;
+/* Saat radio dipilih */
+.time-options input[type="radio"]:checked + label {
+  background-color: #41773E;
   color: white;
-  border-color: #8BC34A;
 }
 
-/* Continue Button Styles */
-.continue-button {
-  background-color: #8BC34A;
+/* Saat hover */
+.time-options label:hover {
+  background-color: #cde8cd;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  margin-bottom: 20px;
+
+  
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='18' viewBox='0 0 24 24' width='18' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+}
+
+.lanjut-btn {
+  background-color: #4caf50;
   color: white;
+  padding: 8px 4px;
+  width: 125px;
   border: none;
-  padding: 12px 24px;
-  border-radius: 5px;
+  border-radius: 6px;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 18px;
-  transition: background-color 0.3s ease;
 }
 
-.continue-button:hover {
-  background-color: #689F38;
-}
-
-.today {
-    background-color: #8BC34A !important;
-    color: white !important;
-    border-radius: 50%;
+.location {
+  max-width: 350px;
+  margin: 0 auto 30px auto;
 }

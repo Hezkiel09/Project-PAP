@@ -107,13 +107,12 @@ input, select {
 
 select {
   padding: 10px;
-  padding-right: 35px; /* ruang untuk panah */
+  padding-right: 35px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 14px;
 
-  /* Solusi agar padding bekerja */
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;

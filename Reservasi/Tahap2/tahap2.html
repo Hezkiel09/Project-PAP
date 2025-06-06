@@ -1,187 +1,88 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Reservasi Imunisasi</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-  <div class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reservasi Imunisasi</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Reservasi Imunisasi</h1>
 
-    <!-- Judul -->
-    <h1 class="title">Reservasi Imunisasi</h1>
-
-    <!-- Step Indicator -->
-    <div class="step-indicator">
-      <div class="step">
-        <div class="circle">1</div>
-        <p>Data Pasien</p>
-      </div>
-      <div class="line"></div>
-      <div class="step active">
-        <div class="circle">2</div>
-        <p>Lokasi & Jadwal</p>
-      </div>
-      <div class="line"></div>
-      <div class="step">
-        <div class="circle">3</div>
-        <p>Konfirmasi</p>
-      </div>
-    </div>
-
-    <!-- Lokasi -->
-    <div class="form-group">
-      <label for="lokasi">Lokasi:</label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+      <div class="step-indicator">
+        <div class="step">
+          <div class="circle">1</div>
+          <p>Data Pasien</p>
         </div>
-        <select id="lokasi" class="form-control">
-          <option value="">Cari Posyandu / Klinik</option>
-          <option value="posyandu-1">Posyandu Sehat Ceria</option>
-          <option value="klinik-2">Klinik Keluarga Bahagia</option>
-          <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
+        <div class="line"></div>
+        <div class="step active">
+          <div class="circle">2</div>
+          <p>Lokasi & Jadwal</p>
+        </div>
+        <div class="line"></div>
+        <div class="step">
+          <div class="circle">3</div>
+          <p>Konfirmasi</p>
+        </div>
+      </div>
+
+      <div class="location">
+        <select>
+          <option selected disabled>Cari Posyandu/Klinik</option>
+          <option>Posyandu Melati</option>
+          <option>Klinik Sehat</option>
+          <option>Puskesmas Utama</option>
         </select>
       </div>
-    </div>
 
-    <!-- Kalender -->
-    <div class="calendar">
-      <div class="calendar-header">
-        <button class="calendar-nav" id="prevMonth"><</button>
-        <h2 id="monthYear">Mei 2025</h2>
-        <button class="calendar-nav" id="nextMonth">></button>
+      <div class="grid-layout">
+        <div class="calendar" id="calendar">
+          <div class="calendar-header">
+            <button id="prevMonth">&lt;</button>
+            <span id="monthYear"></span>
+            <button id="nextMonth">&gt;</button>
+          </div>
+          <div class="calendar-days">
+            <div>M</div>
+            <div>S</div>
+            <div>S</div>
+            <div>R</div>
+            <div>K</div>
+            <div>J</div>
+            <div>S</div>
+          </div>
+          <div class="calendar-dates" id="calendarDates"></div>
+        </div>
+
+        <div class="options">
+          <p class="label">Pilih Jam</p>
+          <div class="time-options">
+            <input type="radio" id="jam1" name="jam" value="09.00" />
+            <label for="jam1">09.00</label>
+
+            <input type="radio" id="jam2" name="jam" value="10.00" checked />
+            <label for="jam2">10.00</label>
+
+            <input type="radio" id="jam3" name="jam" value="13.00" />
+            <label for="jam3">13.00</label>
+
+            <input type="radio" id="jam4" name="jam" value="14.00" />
+            <label for="jam4">14.00</label>
+          </div>
+
+          <p class="label">Pilih Imunisasi</p>
+          <select>
+            <option>----- Pilih Vaksin -----</option>
+            <option>BCG</option>
+            <option>Hepatitis B</option>
+          </select>
+
+          <button class="lanjut-btn">Lanjutkan</button>
+        </div>
       </div>
-      <table id="calendar">
-        <thead>
-          <tr>
-            <th>M</th>
-            <th>S</th>
-            <th>S</th>
-            <th>R</th>
-            <th>K</th>
-            <th>J</th>
-            <th>S</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Isi kalender akan di-generate oleh JavaScript -->
-        </tbody>
-      </table>
     </div>
 
-    <!-- Jam -->
-    <div class="time-slots">
-      <p>Pilih Jam:</p>
-      <div class="d-flex flex-wrap">
-        <label class="time-slot">
-          <input type="radio" name="time" value="09:00"> <span>09:00</span>
-        </label>
-        <label class="time-slot">
-          <input type="radio" name="time" value="10:00" checked> <span>10:00</span>
-        </label>
-        <label class="time-slot">
-          <input type="radio" name="time" value="13:00"> <span>13:00</span>
-        </label>
-        <label class="time-slot">
-          <input type="radio" name="time" value="14:00"> <span>14:00</span>
-        </label>
-      </div>
-    </div>
-
-    <!-- Vaksin -->
-    <div class="form-group">
-      <label for="vaksin">Pilih Imunisasi:</label>
-      <select id="vaksin" class="form-control">
-        <option value="">----- Pilih Vaksin -----</option>
-        <option value="bcg">BCG</option>
-        <option value="polio">Polio</option>
-        <option value="campak">Campak</option>
-        <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
-      </select>
-    </div>
-
-    <!-- Tombol Lanjutkan -->
-    <button class="continue-button">Lanjutkan</button>
-  </div>
-
-  <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const monthYearElement = document.getElementById('monthYear');
-            const calendarBody = document.getElementById('calendar').getElementsByTagName('tbody')[0];
-            const prevMonthButton = document.getElementById('prevMonth');
-            const nextMonthButton = document.getElementById('nextMonth');
-
-            let currentDate = new Date();
-            let currentMonth = currentDate.getMonth();
-            let currentYear = currentDate.getFullYear();
-
-            function generateCalendar(month, year) {
-                calendarBody.innerHTML = '';
-
-                const firstDayOfMonth = new Date(year, month, 1);
-                const lastDayOfMonth = new Date(year, month + 1, 0);
-                const daysInMonth = lastDayOfMonth.getDate();
-                const startingDay = firstDayOfMonth.getDay();
-
-                monthYearElement.textContent = new Intl.DateTimeFormat('id-ID', {
-                    month: 'long',
-                    year: 'numeric'
-                }).format(new Date(year, month));
-
-                let date = 1;
-                for (let i = 0; i < 6; i++) {
-                    let row = document.createElement('tr');
-                    for (let j = 0; j < 7; j++) {
-                        if (i === 0 && j < startingDay) {
-                            let cell = document.createElement('td');
-                            let cellText = document.createTextNode('');
-                            cell.appendChild(cellText);
-                            row.appendChild(cell);
-                        } else if (date > daysInMonth) {
-                            break;
-                        } else {
-                            let cell = document.createElement('td');
-                            let cellText = document.createTextNode(date);
-                             if (date === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
-                                cell.classList.add('today'); // Menandai hari ini
-                            }
-                            cell.appendChild(cellText);
-                            row.appendChild(cell);
-                            date++;
-                        }
-                    }
-                    calendarBody.appendChild(row);
-                }
-            }
-
-            prevMonthButton.addEventListener('click', function () {
-                currentMonth--;
-                if (currentMonth < 0) {
-                    currentMonth = 11;
-                    currentYear--;
-                }
-                generateCalendar(currentMonth, currentYear);
-            });
-
-            nextMonthButton.addEventListener('click', function () {
-                currentMonth++;
-                if (currentMonth > 11) {
-                    currentMonth = 0;
-                    currentYear++;
-                }
-                generateCalendar(currentMonth, currentYear);
-            });
-
-            generateCalendar(currentMonth, currentYear);
-        });
-    </script>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
