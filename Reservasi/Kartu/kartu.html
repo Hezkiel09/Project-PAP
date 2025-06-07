@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kartu Imunisasi</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/home/image/logo.png" type="image/png" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Kartu Imunisasi</h1>
+      <p class="subtitle">
+        Reservasi berhasil!
+      </p>
+
+      <div class="card">
+        <div class="card-header">
+          <img src="/home/image/logo_imun-removebg-preview 1.png" alt="Logo Imun+" class="logo" />
+          <img src="/home/image/Untitled design (11).png" alt="QR Code" class="qr" />
+        </div>
+
+        <h2>Kartu Imunisasi</h2>
+
+        <div class="info">
+          <p>
+            <span class="label">Kode Imunisasi</span> :
+            <span id="kodeImunisasi"></span>
+          </p>
+          <p><span class="label">Nama</span> : <span id="nama"></span></p>
+          <p>
+            <span class="label">Tanggal Lahir</span> :
+            <span id="tanggal"></span>
+          </p>
+          <p>
+            <span class="label">Nomor HP</span> : <span id="nomorHP"></span>
+          </p>
+          <p>
+            <span class="label">Jenis Vaksin</span> : <span id="vaksin"></span>
+          </p>
+          <p>
+            <span class="label">Tanggal</span> :
+            <span id="reservasiTanggal"></span>
+          </p>
+          <p>
+            <span class="label">Waktu</span> : <span id="reservasiJam"></span>
+          </p>
+          <p>
+            <span class="label">Lokasi</span> :
+            <span id="reservasiLokasi"></span>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      document.getElementById("kodeImunisasi").textContent =
+        localStorage.getItem("kodeImunisasi");
+      document.getElementById("nama").textContent =
+        localStorage.getItem("nama");
+      document.getElementById("tanggal").textContent =
+        localStorage.getItem("tanggal");
+      document.getElementById("nomorHP").textContent =
+        localStorage.getItem("nomorHP");
+      document.getElementById("vaksin").textContent =
+        localStorage.getItem("vaksin");
+      document.getElementById("reservasiTanggal").textContent =
+        localStorage.getItem("reservasiTanggal");
+      document.getElementById("reservasiJam").textContent =
+        localStorage.getItem("reservasiJam");
+      document.getElementById("reservasiLokasi").textContent =
+        localStorage.getItem("reservasiLokasi");
+    </script>
+  </body>
+</html>
