@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -77,7 +77,7 @@ body {
   padding: 35px 30px;
   border-radius: 20px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-  width: 400px;;
+  width: 400px;
 }
 
 .form-box h2 {
@@ -96,7 +96,8 @@ label {
   margin-bottom: 5px;
 }
 
-input, select {
+input,
+select {
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
@@ -142,4 +143,23 @@ button:hover {
   font-size: 12px;
   margin-top: 10px;
   color: #555;
+}
+
+/* Navbar */
+.navbar-brand img {
+  border-radius: 8px;
+}
+
+/* Navbar link active/hover */
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #198754; /* Bootstrap's success green */
+}
+
+/* Login | Daftar link */
+.navbar .d-flex a:hover {
+  color: #198754;
 }
