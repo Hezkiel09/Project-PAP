@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Konfirmasi Reservasi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="/home/image/logo.png" type="image/png" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Reservasi Imunisasi</h1>
+
+    <div class="step-indicator">
+      <div class="step">
+        <div class="circle">1</div>
+        <p>Data Pasien</p>
+      </div>
+      <div class="line"></div>
+      <div class="step">
+        <div class="circle">2</div>
+        <p>Lokasi & Jadwal</p>
+      </div>
+      <div class="line"></div>
+      <div class="step active">
+        <div class="circle">3</div>
+        <p>Konfirmasi</p>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="card">
+        <h3>Data Pasien</h3>
+        <p><strong>Nama Lengkap</strong> : <span id="c-nama"></span></p>
+        <p><strong>NIK</strong> : <span id="c-nik"></span></p>
+        <p><strong>Tanggal Lahir</strong> : <span id="c-tanggal"></span></p>
+        <p><strong>Jenis Kelamin</strong> : <span id="c-kelamin"></span></p>
+        <p><strong>Golongan Darah</strong> : <span id="c-goldar"></span></p>
+        <p><strong>Alamat</strong> : <span id="c-alamat"></span></p>
+      </div>
+      <div class="card">
+        <h3>Ringkasan</h3>
+        <p><strong>Jenis Vaksin</strong> : <span id="c-vaksin"></span></p>
+        <p><strong>Tanggal</strong> : <span id="c-reservasi-tanggal"></span></p>
+        <p><strong>Waktu</strong> : <span id="c-reservasi-jam"></span></p>
+        <p><strong>Lokasi</strong> : <span id="c-reservasi-lokasi"></span></p>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="btn-secondary" onclick="history.back()">Kembali</button>
+      <button class="btn-primary" id="confirmBtn">Konfirmasi</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('c-nama').textContent = localStorage.getItem('nama') || '-';
+    document.getElementById('c-nik').textContent = localStorage.getItem('nik') || '-';
+    document.getElementById('c-tanggal').textContent = localStorage.getItem('tanggal') || '-';
+    document.getElementById('c-kelamin').textContent = localStorage.getItem('kelamin') || '-';
+    document.getElementById('c-goldar').textContent = localStorage.getItem('goldar') || '-';
+    document.getElementById('c-alamat').textContent = localStorage.getItem('alamat') || '-';
+
+    document.getElementById('c-vaksin').textContent = localStorage.getItem('vaksin') || '-';
+    document.getElementById('c-reservasi-tanggal').textContent = localStorage.getItem('reservasiTanggal') || '-';
+    document.getElementById('c-reservasi-jam').textContent = localStorage.getItem('reservasiJam') || '-';
+    document.getElementById('c-reservasi-lokasi').textContent = localStorage.getItem('reservasiLokasi') || '-';
+
+    document.getElementById('confirmBtn').addEventListener('click', () => {
+      alert('Reservasi berhasil dikonfirmasi!');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e8f7e5;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #222;
+}
+
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #41773e;
+  border-radius: 50%;
+  background-color: white;
+  color: #41773e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.step.active .circle {
+  background-color: #41773e;
+  color: white;
+}
+
+.step p {
+  font-size: 14px;
+}
+
+.line {
+  width: 40px;
+  height: 1px;
+  background-color: #41773e;
+  margin: 0 10px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border: 1.5px solid #4e944f;
+  border-radius: 10px;
+  width: 350px;
+  text-align: left;
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.card p {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-secondary,
+.btn-primary {
+  padding: 10px 24px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: #d5e9d2;
+  color: #333;
+}
+
+.btn-primary {
+  background-color: #4e944f;
+  color: white;
+}
