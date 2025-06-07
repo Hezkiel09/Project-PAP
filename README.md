@@ -12,7 +12,7 @@ Imun++ adalah platform berbasis web yang bertujuan untuk meningkatkan kesadaran 
 - Mendukung pencapaian SDG poin ke-3
 
 ## ✨ Fitur Utama
-- Halaman edukasi tentang imunisasi
-- Pendaftaran data untuk imunisasi
+- Pendaftaran online untuk imunisasi
 - Timeline jadwal imunisasi
 - Konten menarik untuk anak-anak (poster, video, dll)
+- Halaman edukasi tentang imunisasi
