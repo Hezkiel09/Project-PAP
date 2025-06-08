@@ -1,18 +1,48 @@
 * {
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-color: #e8f7e5;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #e9f9e7 !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar Styles */
+.navbar-brand img {
+  border-radius: 8px;
+}
+
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #198754 !important;
+}
+
+.navbar .d-flex a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar .d-flex a:hover {
+  color: #198754;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
   display: flex;
   justify-content: center;
   padding: 40px 20px;
 }
 
-.container {
+.container-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +57,7 @@ body {
   color: #333;
 }
 
+/* Step Indicator */
 .step-indicator {
   display: flex;
   justify-content: center;
@@ -52,8 +83,6 @@ body {
   align-items: center;
   font-weight: bold;
   font-size: 16px;
-  line-height: 30px;
-  text-align: center;
 }
 
 .step.active .circle {
@@ -63,6 +92,7 @@ body {
 
 .step p {
   font-size: 14px;
+  margin: 0;
 }
 
 .line {
@@ -72,12 +102,14 @@ body {
   margin: 0 10px;
 }
 
+/* Form Styles */
 .form-box {
   background-color: white;
   padding: 35px 30px;
   border-radius: 20px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
 }
 
 .form-box h2 {
@@ -86,33 +118,28 @@ body {
   font-size: 24px;
 }
 
-form {
+.form-box form {
   display: flex;
   flex-direction: column;
 }
 
-label {
+.form-box label {
   font-size: 14px;
   margin-bottom: 5px;
+  color: #333;
 }
 
-input,
-select {
+.form-box input,
+.form-box select {
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 14px;
+  width: 100%;
 }
 
-select {
-  padding: 10px;
-  padding-right: 35px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 14px;
-
+.form-box select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -120,9 +147,10 @@ select {
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 16px 16px;
+  padding-right: 35px;
 }
 
-button {
+.form-box button {
   background-color: #4caf50;
   color: white;
   border: none;
@@ -135,7 +163,7 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
+.form-box button:hover {
   background-color: #45a049;
 }
 
@@ -145,21 +173,62 @@ button:hover {
   color: #555;
 }
 
-/* Navbar */
-.navbar-brand img {
-  border-radius: 8px;
+/* Footer Styles */
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  border-top: 1px solid #e9ecef;
+  margin-top: auto;
 }
 
-/* Navbar link active/hover */
-.nav-link {
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-left {
+  color: #333;
+}
+
+.footer-right {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-right a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 400;
   transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-  color: #198754; /* Bootstrap's success green */
+.footer-right a:hover {
+  text-decoration: underline;
+  color: #198754;
 }
 
-/* Login | Daftar link */
-.navbar .d-flex a:hover {
-  color: #198754;
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .form-box {
+    margin: 0 10px;
+    padding: 25px 20px;
+  }
+
+  .step p {
+    font-size: 12px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 }
