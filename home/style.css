@@ -18,12 +18,26 @@ body {
   color: #198754; /* Bootstrap's success green */
 }
 
+.header-right {
+  width: 120px; /* samakan dengan lebar maksimum tombol "Masuk | Daftar" */
+  display: flex;
+  justify-content: flex-end;
+}
+
 /* Login | Daftar link */
 .navbar .d-flex a:hover {
   color: #198754;
 }
 
-/* Hero Section Full Height */
+#profile-menu img {
+  border: 2px solid #198754;
+  padding: 2px;
+}
+
+#logout-btn {
+  color: rgb(207, 14, 14);
+}
+
 .hero-section {
   position: relative;
   overflow: hidden;
@@ -93,7 +107,7 @@ section .row {
 }
 
 #kontak .text-success {
-  color: #3e8e41 !important; /* warna hijau tua */
+  color: #3e8e41 !important;
 }
 
 #kontak .border-md-start,
@@ -106,7 +120,7 @@ footer.footer {
   align-items: center;
   padding: 16px 40px;
   font-size: 14px;
-  background-color: #edf3f0; /* warna abu kehijauan */
+  background-color: #edf3f0;
   border-top: 1px solid #ccc;
 }
 

@@ -70,12 +70,32 @@
             </li>
           </ul>
 
-          <!-- Menu Login | Daftar -->
-          <div class="d-flex">
-            <a href="../login/login.html" class="text-dark me-2">Masuk</a> |
-            <a href="../register/register.html" class="text-dark ms-2"
-              >Daftar</a
-            >
+          <div class="header-right">
+            <!-- ini diisi dengan tombol Masuk | Daftar ATAU ikon profil/logout -->
+            <!-- Menu Login | Daftar -->
+            <div class="d-flex align-items-center" id="auth-menu">
+              <a href="../login/login.html" class="text-dark me-2">Masuk</a> |
+              <a href="../register/register.html" class="text-dark ms-2"
+                >Daftar</a
+              >
+            </div>
+
+            <div class="dropdown d-none" id="profile-menu">
+              <img
+                src="image/profile-icon.png"
+                alt="Profile"
+                width="32"
+                height="32"
+                class="rounded-circle dropdown-toggle"
+                data-bs-toggle="dropdown"
+                style="cursor: pointer"
+              />
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item" href="#" id="logout-btn">Logout</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -103,7 +123,11 @@
             >
             <a href="#" class="btn btn-success">Reservasi</a>
             <a href="#" class="btn btn-success">Kartu Imunisasi</a>
-            <a href="https://www.youtube.com/shorts/y1onX4llu4E" class="btn btn-success">Konten Edukasi</a>
+            <a
+              href="https://www.youtube.com/shorts/y1onX4llu4E"
+              class="btn btn-success"
+              >Konten Edukasi</a
+            >
           </div>
           <!-- Kolom Kanan: Gambar -->
           <div class="col-lg-6 text-center">
@@ -254,5 +278,24 @@
 
     <!-- ===== Bootstrap JS (untuk navigasi collapse dsb) ===== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Cek apakah user sudah login (contohnya pakai localStorage)
+      const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+      const authMenu = document.getElementById("auth-menu");
+      const profileMenu = document.getElementById("profile-menu");
+      const logoutBtn = document.getElementById("logout-btn");
+
+      if (isLoggedIn === "true") {
+        authMenu.classList.add("d-none");
+        profileMenu.classList.remove("d-none");
+      }
+
+      // Logout
+      logoutBtn.addEventListener("click", function () {
+        localStorage.removeItem("isLoggedIn");
+        location.reload(); // atau redirect ke login page
+      });
+    </script>
   </body>
 </html>
