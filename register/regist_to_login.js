@@ -2,9 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".form-box");
 
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Cegah reload
+    e.preventDefault();
 
-    // Ambil semua input
     const nama = document.getElementById("nama").value.trim();
     const nik = document.getElementById("nik").value.trim();
     const email = document.getElementById("email").value.trim();
@@ -12,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const password = document.getElementById("password").value.trim();
     const confirmPassword = document.getElementById("confirm-password").value.trim();
 
-    // Validasi sederhana
     if (!nama || !nik || !email || !wa || !password || !confirmPassword) {
       alert("Semua kolom harus diisi!");
       return;
@@ -23,10 +21,18 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Simulasi "pendaftaran berhasil"
-    alert("Pendaftaran berhasil! Silakan login.");
+    // Simpan data ke localStorage
+    const userData = {
+      nama,
+      nik,
+      email,
+      wa,
+      password
+    };
 
-    // Redirect ke login page
+    localStorage.setItem("registeredUser", JSON.stringify(userData));
+
+    alert("Pendaftaran berhasil! Silakan login.");
     window.location.href = "../login/login.html";
   });
 });
