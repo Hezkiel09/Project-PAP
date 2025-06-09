@@ -95,5 +95,5 @@ document.getElementById("lanjutBtn").addEventListener("click", () => {
   console.log("Data reservasi:", reservationData);
 
   // In real implementation, you would navigate to next page:
-  // window.location.href = "../Tahap3/tahap3.html";
+  window.location.href = "../Tahap3/tahap3.html";
 });
