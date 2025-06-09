@@ -10,53 +10,13 @@ body {
   color: #000;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #007f91;
-}
-
-.logo img {
-  height: 40px;
-  width: auto;
-}
-
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #000;
-  font-weight: 500;
-}
-
-.auth a {
-  text-decoration: none;
-  color: #000;
-  margin: 0 5px;
-}
-
 main {
   padding: 120px 20px 40px;
   text-align: center;
 }
 
 .switch {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .switch button {
@@ -77,9 +37,7 @@ main {
 
 h1 {
   font-size: 36px;
-  font-weight: bold;
   margin-bottom: 10px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .subtitle {
@@ -102,5 +60,4 @@ footer {
   margin-left: 20px;
   color: #000;
   text-decoration: none;
-  bottom: 0px;
 }
