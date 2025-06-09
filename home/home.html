@@ -281,14 +281,29 @@
     <!-- ===== Bootstrap JS (untuk navigasi collapse dsb) ===== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Cek status login
+      // Cek apakah user sudah login (contohnya pakai localStorage)
       const isLoggedIn = localStorage.getItem("isLoggedIn");
-      const hasReservation = localStorage.getItem("hasReservation"); // kamu set ini saat user selesai reservasi
 
-      // Tangani klik pada tombol Kartu Imunisasi
-      const kartuBtn = document.querySelector('a.btn[href="#"]'); // pastikan ini tombolnya
+      const authMenu = document.getElementById("auth-menu");
+      const profileMenu = document.getElementById("profile-menu");
+      const logoutBtn = document.getElementById("logout-btn");
+
+      if (isLoggedIn === "true") {
+        authMenu.classList.add("d-none");
+        profileMenu.classList.remove("d-none");
+      }
+
+      // Logout
+      logoutBtn.addEventListener("click", function () {
+        localStorage.removeItem("isLoggedIn");
+        location.reload(); // atau redirect ke login page
+      });
+      const kartuBtn = document.querySelector('a.btn[href="#"]');
       kartuBtn.addEventListener("click", function (e) {
-        e.preventDefault(); // cegah pindah halaman
+        e.preventDefault();
+
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        const hasReservation = localStorage.getItem("hasReservation");
 
         if (!isLoggedIn) {
           alert(
@@ -306,7 +321,6 @@
           return;
         }
 
-        // Jika semua sudah OK, arahkan ke halaman kartu imunisasi
         window.location.href = "../kartu-imunisasi/index.html";
       });
     </script>
