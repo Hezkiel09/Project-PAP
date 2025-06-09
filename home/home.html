@@ -74,8 +74,13 @@
             <!-- ini diisi dengan tombol Masuk | Daftar ATAU ikon profil/logout -->
             <!-- Menu Login | Daftar -->
             <div class="d-flex align-items-center" id="auth-menu">
-              <a href="../login/login.html" class="text-dark me-2">Masuk</a> |
-              <a href="../register/register.html" class="text-dark ms-2"
+              <a href="/login-register/login/login.html" class="text-dark me-2"
+                >Masuk</a
+              >
+              |
+              <a
+                href="/login-register/register/register.html"
+                class="text-dark ms-2"
                 >Daftar</a
               >
             </div>
@@ -281,48 +286,66 @@
     <!-- ===== Bootstrap JS (untuk navigasi collapse dsb) ===== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Cek apakah user sudah login (contohnya pakai localStorage)
+      // Cek status login dan data user
       const isLoggedIn = localStorage.getItem("isLoggedIn");
+      const user = JSON.parse(localStorage.getItem("registeredUser"));
 
       const authMenu = document.getElementById("auth-menu");
       const profileMenu = document.getElementById("profile-menu");
       const logoutBtn = document.getElementById("logout-btn");
 
+      // Default: tampilkan "Masuk | Daftar"
+      authMenu.classList.remove("d-none");
+      profileMenu.classList.add("d-none");
+
+      // Jika login dan user valid, tampilkan menu profil
+      if (isLoggedIn === "true" && user) {
+        authMenu.classList.add("d-none");
+        profileMenu.classList.remove("d-none");
+      }
+
+      // Tampilkan menu yang sesuai
       if (isLoggedIn === "true") {
         authMenu.classList.add("d-none");
         profileMenu.classList.remove("d-none");
       }
 
-      // Logout
-      logoutBtn.addEventListener("click", function () {
-        localStorage.removeItem("isLoggedIn");
-        location.reload(); // atau redirect ke login page
-      });
+      // Cek tombol logout ada atau nggak
+      if (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+          localStorage.removeItem("isLoggedIn");
+          location.reload();
+        });
+      }
+
+      // Tombol "Kartu Imunisasi"
       const kartuBtn = document.querySelector('a.btn[href="#"]');
-      kartuBtn.addEventListener("click", function (e) {
-        e.preventDefault();
+      if (kartuBtn) {
+        kartuBtn.addEventListener("click", function (e) {
+          e.preventDefault();
 
-        const isLoggedIn = localStorage.getItem("isLoggedIn");
-        const hasReservation = localStorage.getItem("hasReservation");
+          const isLoggedIn = localStorage.getItem("isLoggedIn");
+          const hasReservation = localStorage.getItem("hasReservation");
 
-        if (!isLoggedIn) {
-          alert(
-            "Silakan masuk atau daftar akun terlebih dahulu sebelum melihat Kartu Imunisasi."
-          );
-          window.location.href = "../login/login.html";
-          return;
-        }
+          if (!isLoggedIn) {
+            alert(
+              "Silakan masuk atau daftar akun terlebih dahulu sebelum melihat Kartu Imunisasi."
+            );
+            window.location.href = "../login-register/login/login.html";
+            return;
+          }
 
-        if (!hasReservation) {
-          alert(
-            "Anda belum melakukan reservasi imunisasi. Silakan lakukan reservasi terlebih dahulu."
-          );
-          window.location.href = "../reservasi/Tahap1/tahap1.html";
-          return;
-        }
+          if (!hasReservation) {
+            alert(
+              "Anda belum melakukan reservasi imunisasi. Silakan lakukan reservasi terlebih dahulu."
+            );
+            window.location.href = "../reservasi/Tahap1/tahap1.html";
+            return;
+          }
 
-        window.location.href = "../kartu-imunisasi/index.html";
-      });
+          window.location.href = "../kartu-imunisasi/index.html";
+        });
+      }
     </script>
   </body>
 </html>
