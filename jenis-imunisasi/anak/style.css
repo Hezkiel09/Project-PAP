@@ -31,6 +31,10 @@ header {
   text-shadow: 2px 2px #ccc;
 }
 
+.title.no-shadow {
+  text-shadow: none;
+}
+
 .tabs {
   text-align: center;
   margin-bottom: 30px;
@@ -55,11 +59,12 @@ header {
   color: #333;
 }
 
-.grid-2x2 {
+.grid-2x2,
+.grid-2x3 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  max-width: 680px; /* lebih ramping dari sebelumnya */
+  max-width: 680px;
   margin: auto;
   padding: 0 20px 40px;
 }
@@ -132,7 +137,7 @@ footer.footer {
   align-items: center;
   padding: 16px 40px;
   font-size: 14px;
-  background-color: #edf3f0; /* warna abu kehijauan */
+  background-color: #edf3f0;
   border-top: 1px solid #ccc;
 }
 
@@ -148,21 +153,5 @@ footer.footer {
 }
 
 .footer-right a:hover {
-  text-decoration: underline;
-}
-
-
-.footer-text {
-  margin-bottom: 8px;
-  color: #333;
-}
-
-.footer-links a {
-  color: #333;
-  text-decoration: none;
-  margin: 0 8px;
-}
-
-.footer-links a:hover {
   text-decoration: underline;
 }
