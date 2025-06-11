@@ -19,4 +19,3 @@ Imun+ adalah platform berbasis web yang bertujuan untuk meningkatkan kesadaran m
 
 ====================================================
 
-untuk mengakses landing page harap mengakses folder home/index.html
