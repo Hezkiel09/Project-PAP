@@ -4,7 +4,7 @@
 Website edukatif yang mendukung Sustainable Development Goal (SDG) Point 3: Kesehatan yang Baik dan Kesejahteraan.
 
 ## 🌐 Deskripsi Singkat
-Imun++ adalah platform berbasis web yang bertujuan untuk meningkatkan kesadaran masyarakat (terutama anak-anak atau remaja) mengenai pentingnya imunisasi dan kesehatan.
+Imun+ adalah platform berbasis web yang bertujuan untuk meningkatkan kesadaran masyarakat (terutama anak-anak atau remaja) mengenai pentingnya imunisasi dan kesehatan.
 
 ## 🎯 Tujuan
 - Meningkatkan edukasi soal vaksinasi dan imunisasi
