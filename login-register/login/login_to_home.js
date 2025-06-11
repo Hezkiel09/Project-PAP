@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       alert("Login berhasil!");
       localStorage.setItem("isLoggedIn", "true");
-      window.location.href = "../../home/home.html";
+      window.location.href = "../../home/index.html";
     } else {
       alert("Email atau password salah!");
     }
