@@ -16,3 +16,7 @@ Imun+ adalah platform berbasis web yang bertujuan untuk meningkatkan kesadaran m
 - Timeline jadwal imunisasi
 - Konten menarik untuk anak-anak (poster, video, dll)
 - Halaman edukasi tentang imunisasi
+
+====================================================
+
+untuk mengakses landing page harap mengakses folder home/home.html
