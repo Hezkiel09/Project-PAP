@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById("email").value.trim();
     const wa = document.getElementById("wa").value.trim();
     const password = document.getElementById("password").value.trim();
-    const confirmPassword = document.getElementById("confirm-password").value.trim();
+    const confirmPassword = document
+      .getElementById("confirm-password")
+      .value.trim();
 
     if (!nama || !nik || !email || !wa || !password || !confirmPassword) {
       alert("Semua kolom harus diisi!");
@@ -27,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
       nik,
       email,
       wa,
-      password
+      password,
     };
 
     localStorage.setItem("registeredUser", JSON.stringify(userData));
