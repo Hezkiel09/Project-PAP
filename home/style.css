@@ -107,7 +107,7 @@ section .row {
 }
 
 #kontak .text-success {
-  color: #3e8e41 !important;
+  color: #3e8e41 !important; /* warna hijau tua */
 }
 
 #kontak .border-md-start,
@@ -120,7 +120,7 @@ footer.footer {
   align-items: center;
   padding: 16px 40px;
   font-size: 14px;
-  background-color: #edf3f0;
+  background-color: #edf3f0; /* warna abu kehijauan */
   border-top: 1px solid #ccc;
 }
 
